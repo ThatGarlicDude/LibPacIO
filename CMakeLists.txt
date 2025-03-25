@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12) # Cmake must be on version 3.12 or above to proceed.
-project(libpacset VERSION 0.0.1) # Start the project.
+project(libpacset VERSION 0.0.2) # Start the project.
 
 set(CMAKE_C_STANDARD 99) # C99 is required.
 set(CMAKE_C_STANDARD_REQUIRED ON)

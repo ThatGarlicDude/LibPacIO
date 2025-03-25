@@ -1,3 +1,11 @@
+2025-03-25 GarlicDude <https://github.com/ThatGarlicDude>
+
+	Libpacset Version 0.0.2-alpha
+	* Renamed romSetDirectory to filePathArray.
+	* Added a whole bunch of code to filePathArray.
+	* Gave the filePathArray header a proper definition.
+	* GitIgnore now ignores the build folder and its contents.
+
 2025-03-18 GarlicDude <https://github.com/ThatGarlicDude>
 
 	Libpacset Version 0.0.1-alpha
