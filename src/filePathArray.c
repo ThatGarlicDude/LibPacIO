@@ -28,14 +28,3 @@ FilePathArray newFilePathArray(size_t size) {
 FilePathArray newEmptyFilePathArray() {
 	return newFilePathArray(0);
 }
-
-// Getter for a FilePathArray's filePaths.
-const char** getFilePaths(FilePathArray* filePathArray) {
-	return filePathArray->filePaths;
-}
-
-// Getter for a FilePathArray's size.
-size_t getSize(FilePathArray* filePathArray) {
-	return filePathArray->size;
-}
-

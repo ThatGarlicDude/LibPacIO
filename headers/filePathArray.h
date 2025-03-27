@@ -10,8 +10,4 @@
 
 	FilePathArray newEmptyFilePathArray();
 
-	const char** getFilePaths(FilePathArray* filePathArray);
-
-	size_t getSize(FilePathArray* filePathArray);
-
 #endif

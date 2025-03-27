@@ -1,3 +1,12 @@
+2025-03-27 GarlicDude <https://github.com/ThatGarlicDude>
+
+	Libpacset Version 0.0.3-alpha
+	* Added filePathGetter.
+	* Getting the size and filePaths of the FilePathArray is moved to that filePathGetter.
+	* Getting the size of the FilePathArray now returns a pointer.
+	* You can now get a string in the FilePathArray via getFilePath.
+	* Did lots of debugging.
+
 2025-03-25 GarlicDude <https://github.com/ThatGarlicDude>
 
 	Libpacset Version 0.0.2-alpha
