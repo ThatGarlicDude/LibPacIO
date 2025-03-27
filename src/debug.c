@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "filePathArray.h"
 #include "filePathGetter.h"
+#include "filePathPrinter.h"
 #include "romSet.h"
 
 // Main function.
@@ -15,5 +16,11 @@ int main(int argc, char* argv[]) {
 	printf("Size of array is: %zu.\n", *size);
 	printf("Let's get something in the array...\n");
 	printf("FilePath in index 0 is %s.\n", filePaths[0]);
+	printf("Let's get all the filePaths in the array.\n");
+	printAllFilePaths(&paths);
+	printf("Let's add something to the array...\n");
+	filePaths[0] = "Hello!";
+	printf("Now let's print the array...\n");
+	printAllFilePaths(&paths);
 	return 0;
 }
