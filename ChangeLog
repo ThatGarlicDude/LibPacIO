@@ -1,5 +1,13 @@
 2025-03-27 GarlicDude <https://github.com/ThatGarlicDude>
 
+	Libpacset Version 0.0.5-alpha
+	* CMakeLists.txt now uses the -fPIC flag.
+	* Added nullHandler.
+	* Added stringAdder.
+	* Did even more debugging.
+
+2025-03-27 GarlicDude <https://github.com/ThatGarlicDude>
+
 	Libpacset Version 0.0.4-alpha
 	* Added filePathPrinter.
 	* Did more debugging.
