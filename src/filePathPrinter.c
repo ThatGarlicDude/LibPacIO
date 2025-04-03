@@ -23,3 +23,16 @@ void printAllFilePaths(FilePathArray* filePathArray) {
 		printFilePath(filePathArray, index);
 	}
 }
+
+// Prints a filePath's pointer. Used for debugging purposes.
+void printFilePathPointer(FilePathArray* filePathArray, int index) {
+	const char* filePath = (const char*) filePathArray->filePaths[index];
+	printf("%p\n", filePath);
+}
+
+// Prints all the pointers.
+void printAllFilePathPointers(FilePathArray* filePathArray) {
+	for (int index = 0; index < filePathArray->size; index++) {
+		printFilePathPointer(filePathArray, index);
+	}
+}

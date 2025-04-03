@@ -4,8 +4,8 @@
 	#include <stdio.h>
 	#include "filePathArray.h"
 
-	const char* findFirstNull(FilePathArray* filePathArray);
+	int findFirstNull(FilePathArray* filePathArray);
 
-	const char* findLastNull(FilePathArray* filePathArray);
+	int findLastNull(FilePathArray* filePathArray);
 
 #endif

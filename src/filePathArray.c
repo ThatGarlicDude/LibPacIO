@@ -21,11 +21,16 @@ FilePathArray newFilePathArray(size_t size) {
 	FilePathArray filePathArray;
 	filePathArray.size = size;
 	filePathArray.filePaths = malloc(sizeof(char*) * size);
-	addStrings(&filePathArray, NULL);
+	//addStrings(&filePathArray, NULL);
 	return filePathArray;
 }
 
 // Ditto, but it's empty from the start.
 FilePathArray newEmptyFilePathArray() {
 	return newFilePathArray(0);
+}
+
+// Frees the dynamic array inside the struct.
+void freeFilePaths(FilePathArray* filePathArray) {
+	free(filePathArray->filePaths);
 }

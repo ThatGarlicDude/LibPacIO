@@ -7,4 +7,8 @@
 	void printFilePath(FilePathArray* filePathArray, int index);
 
 	void printAllFilePaths(FilePathArray* filePathArray);
+
+	void printFilePathPointer(FilePathArray* filePathArray, int index);
+
+	void printAllFilePathPointers(FilePathArray* filePathArray);
 #endif

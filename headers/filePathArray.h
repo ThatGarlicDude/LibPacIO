@@ -12,4 +12,6 @@
 
 	FilePathArray newEmptyFilePathArray();
 
+	void freeFilePaths(FilePathArray* filePathArray);
+
 #endif
