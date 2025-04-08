@@ -5,7 +5,6 @@
 int findFirstNull(FilePathArray* filePathArray) {
 	size_t size = filePathArray->size;
 	for (int index = 0; index < size; index++) {
-		printf("Pointer for index %d is %p.\n", index, &(filePathArray->filePaths[index]));
 		if (filePathArray->filePaths[index] == NULL) {
 			return index;
 		}

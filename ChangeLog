@@ -1,3 +1,12 @@
+2025-04-08 GarlicDude <https://github.com/ThatGarlicDude>
+
+	LibPacSet Version 0.0.7-alpha
+	* Removed the ability to print pointers for indexes individually.
+	* Removed romSet.c and .h.
+	* Removed the default string for adding strings, as there is no need for strings to have that.
+	* Removed the unneccesary casting in fileExtender.c.
+	* Removed the function that simply returns a FilePathArray itself, as there is no need to use it.
+
 2025-04-03 GarlicDude <https://github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.6-alpha

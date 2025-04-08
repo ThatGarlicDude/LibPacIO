@@ -5,7 +5,7 @@
 // Changes the size of a FilePathArray.
 void changeSize(FilePathArray* filePathArray, int size) {
 	filePathArray->size = size;
-	filePathArray->filePaths = (const char*) realloc(filePathArray->filePaths, sizeof(const char*) * size);
+	filePathArray->filePaths = realloc(filePathArray->filePaths, sizeof(const char*) * size);
 }
 
 // Adds a filepath in the FilePathArray.

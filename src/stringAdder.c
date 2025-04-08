@@ -10,13 +10,11 @@ even strings at all.
 #include <stdio.h>
 #include "filePathArray.h"
 
-const char* DEFAULT_STRING = "FileName.placeholder";
-
 // Gives a filePath a new string.
 void addString(FilePathArray* filePathArray, int index, const char* STRING) {
 	// Replace the null string with the default one.
 	if (STRING == NULL) {
-		STRING = DEFAULT_STRING;
+		return;
 	}
 	filePathArray->filePaths[index] = STRING;
 }

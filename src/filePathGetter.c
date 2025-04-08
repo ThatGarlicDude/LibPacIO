@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include "filePathArray.h"
 
-// Probably some useless function that I'll never use.
-FilePathArray* getFilePathArray(FilePathArray* filePathArray) {
-	return filePathArray;
-}
-
 // Gets a filePath in the filePathArray.
 const char* getFilePath(FilePathArray* filePathArray, int index) {
 	return filePathArray->filePaths[index];
