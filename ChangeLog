@@ -1,3 +1,10 @@
+2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
+
+	LibPacSet Version 0.0.8-alpha
+	* Added trimming!
+	* filePathTrimmer.c and .h are added!
+	* filePathArrays can now be resized based on the location of the first null pointer.
+
 2025-04-08 GarlicDude <https://github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.7-alpha
