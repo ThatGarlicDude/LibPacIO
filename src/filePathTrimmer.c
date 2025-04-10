@@ -24,5 +24,5 @@ void trimFilePathArrayByFirstNull(FilePathArray* filePathArray) {
 	if (firstNull == -1) {
 		return;
 	}
-	changeSize(filePathArray, --firstNull);
+	changeSize(filePathArray, firstNull);
 }

@@ -1,9 +1,9 @@
+#include "filePathArray.h"
+
 #ifndef FILE_PATH_EXTENDER_H
 #define FILE_PATH_EXTENDER_H
 
-	#include "filePathArray.h"
-
-	void changeSize(FilePathArray* filePathArray, int size);
+	void changeSize(FilePathArray* filePathArray, size_t size);
 
 	void addFilePath(FilePathArray* filePathArray, const char* filePath, int index);
 

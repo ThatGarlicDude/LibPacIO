@@ -3,7 +3,7 @@
 #include "filePathArray.h"
 
 // Changes the size of a FilePathArray.
-void changeSize(FilePathArray* filePathArray, int size) {
+void changeSize(FilePathArray* filePathArray, size_t size) {
 	filePathArray->size = size;
 	filePathArray->filePaths = realloc(filePathArray->filePaths, sizeof(const char*) * size);
 }

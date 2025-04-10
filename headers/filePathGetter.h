@@ -1,8 +1,8 @@
+#include <stdio.h>
+#include "filePathArray.h"
+
 #ifndef FILE_PATH_GETTER_H
 #define FILE_PATH_GETTER_H
-
-	#include <stdio.h>
-	#include "filePathArray.h"
 
 	FilePathArray* getFilePathArray(FilePathArray* filePathArray);
 

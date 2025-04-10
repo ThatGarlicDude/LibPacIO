@@ -1,5 +1,13 @@
 2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
 
+	LibPacSet Version 0.0.9-alpha
+	* Removed decrementing the size of a filePathArray when trimming, as it causes problems.
+	* Changing the size of a filePathArray now uses size_t instead of int.
+	* Cleaned up newFilePathArray() a bit.
+	* Cleaned up the header files.
+
+2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
+
 	LibPacSet Version 0.0.8-alpha
 	* Added trimming!
 	* filePathTrimmer.c and .h are added!

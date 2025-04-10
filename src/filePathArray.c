@@ -21,7 +21,6 @@ FilePathArray newFilePathArray(size_t size) {
 	FilePathArray filePathArray;
 	filePathArray.size = size;
 	filePathArray.filePaths = malloc(sizeof(char*) * size);
-	//addStrings(&filePathArray, NULL);
 	return filePathArray;
 }
 
