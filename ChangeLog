@@ -1,3 +1,20 @@
+2025-04-30 GarlicDude <https://github.com/ThatGarlicDude>
+
+	LibPacSet Version 1.0.0
+	* Simplified everything.
+	* Removed NEWS, as it is not needed.
+	* Removed TODO.
+	* FilePathArrays are now simply called ROM Sets.
+	* ROM Sets are now treated as stacks instead of complicated dynamic arrays.
+		* ROM files can be appended on the stack.
+	* Removed filePathExtender.
+	* Removed filePathGetter.
+	* Removed filePathTrimmer.
+	* Removed nullHandler.
+	* Removed stringAdder.
+	* Reworked on printing ROM Sets.
+	* CMake process no longer uses -fPIC as its flag.
+
 2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.9-alpha
