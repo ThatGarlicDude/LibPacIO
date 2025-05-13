@@ -1,10 +1,16 @@
-2025-05-01 GarlicDude <https://github.com/ThatGarlicDude>
+2025-05-13 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 1.1.0
+	* Added an assets directory, containing the logo, icon, and title.
+	* README.md now uses the stylized title image for its header.
+
+2025-05-01 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.0.1
 	* Shared library no longer needs to be installed to /usr/local/lib anymore.
 	* Library is now treated as a submodule for other projects.
 
-2025-04-30 GarlicDude <https://github.com/ThatGarlicDude>
+2025-04-30 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.0.0
 	* Simplified everything.
@@ -21,7 +27,7 @@
 	* Reworked on printing ROM Sets.
 	* CMake process no longer uses -fPIC as its flag.
 
-2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
+2025-04-09 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.9-alpha
 	* Removed decrementing the size of a filePathArray when trimming, as it causes problems.
@@ -29,14 +35,14 @@
 	* Cleaned up newFilePathArray() a bit.
 	* Cleaned up the header files.
 
-2025-04-09 GarlicDude <https://github.com/ThatGarlicDude>
+2025-04-09 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.8-alpha
 	* Added trimming!
 	* filePathTrimmer.c and .h are added!
 	* filePathArrays can now be resized based on the location of the first null pointer.
 
-2025-04-08 GarlicDude <https://github.com/ThatGarlicDude>
+2025-04-08 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.7-alpha
 	* Removed the ability to print pointers for indexes individually.
@@ -45,7 +51,7 @@
 	* Removed the unneccesary casting in fileExtender.c.
 	* Removed the function that simply returns a FilePathArray itself, as there is no need to use it.
 
-2025-04-03 GarlicDude <https://github.com/ThatGarlicDude>
+2025-04-03 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.6-alpha
 	* The project is now capitalized, no longer being called "libpacset".
@@ -57,7 +63,7 @@
 	* Finding the first and last null pointers will now return an index instead of a null pointer.
 	* Removed debug.c (did so much debugging that it just disappeared).
 
-2025-03-27 GarlicDude <https://github.com/ThatGarlicDude>
+2025-03-27 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.5-alpha
 	* CMakeLists.txt now uses the -fPIC flag.
@@ -65,13 +71,13 @@
 	* Added stringAdder.
 	* Did even more debugging.
 
-2025-03-27 GarlicDude <https://github.com/ThatGarlicDude>
+2025-03-27 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.4-alpha
 	* Added filePathPrinter.
 	* Did more debugging.
 
-2025-03-27 GarlicDude <https://github.com/ThatGarlicDude>
+2025-03-27 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.3-alpha
 	* Added filePathGetter.
@@ -80,7 +86,7 @@
 	* You can now get a string in the FilePathArray via getFilePath.
 	* Did lots of debugging.
 
-2025-03-25 GarlicDude <https://github.com/ThatGarlicDude>
+2025-03-25 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.2-alpha
 	* Renamed romSetDirectory to filePathArray.
@@ -88,7 +94,7 @@
 	* Gave the filePathArray header a proper definition.
 	* GitIgnore now ignores the build folder and its contents.
 
-2025-03-18 GarlicDude <https://github.com/ThatGarlicDude>
+2025-03-18 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 0.0.1-alpha
 	* Added the base files and directories, such as AUTHORS, CMakeLists.txt, src, and headers.
