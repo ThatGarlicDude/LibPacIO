@@ -1,5 +1,15 @@
 2025-05-13 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 1.2.0
+	* Added romFile.c and .h.
+	* romFile contains a struct called RomFile, and functions associated with it.
+	* filePathHandler.c and .h are now called romSetHandler.
+	* romSetHandler now just uses char* instead of const char*.
+	* The RomSet struct now uses the new RomFile struct instead of strings.
+	* appendRom now adds a RomFile struct into a RomSet.
+
+2025-05-13 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 1.1.1
 	* Made the title image a header.
 

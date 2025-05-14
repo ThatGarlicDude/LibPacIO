@@ -1,22 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "romFile.h"
 
 // A dynamic array that contains the ROM filepaths.
 typedef struct {
 	size_t size;
-	const char** filePaths;
+	RomFile* roms;
 } RomSet;
 
 // Initializes a new ROM set.
-RomSet newRomSet() {
+RomSet newROMSet() {
 	RomSet romSet;
 	romSet.size = 0;
-	romSet.filePaths = malloc(0);
+	romSet.roms = malloc(0);
 	return romSet;
 }
 
 // Frees the dynamic array inside the ROM set.
-void freeFilePaths(RomSet* romSet) {
-	free(romSet->filePaths);
+void freeROMs(RomSet* romSet) {
+	free(romSet->roms);
 	romSet->size = 0;
 }

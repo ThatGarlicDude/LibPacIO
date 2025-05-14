@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "romFile.h"
 
 #ifndef ROM_SET_H
 #define ROM_SET_H
@@ -6,13 +7,13 @@
 	// A dynamic array that contains the ROM filepaths.
 	typedef struct {
 		size_t size;
-		const char** filePaths;
+		RomFile* roms;
 	} RomSet;
 
 	// Initializes a new ROM set.
-	RomSet newRomSet();
+	RomSet newROMSet();
 
 	// Frees the dynamic array inside the ROM set.
-	void freeFilePaths(RomSet* romSet);
+	void freeROMs(RomSet* romSet);
 
 #endif

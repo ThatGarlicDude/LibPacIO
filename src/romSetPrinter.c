@@ -8,7 +8,7 @@ void printRomSet(RomSet* romSet) {
 	printf("\tSize: %zu.\n", romSet->size);
 	printf("\n\t-- CONTENTS --\n");
 	for (size_t index = 0; index < romSet->size; index++) {
-		printf("\tROM #%ld: %s.\n", index, romSet->filePaths[index]);
-		printf("\tROM #%ld Address: %p.\n\n", index, romSet->filePaths[index]);
+		printf("\tROM #%ld: %s.\n", index, romSet->roms[index]);
+		printf("\tROM #%ld Address: %p.\n\n", index, romSet->roms[index]);
 	}
 }
