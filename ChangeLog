@@ -1,3 +1,14 @@
+2025-05-21 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 1.3.0
+	* Added the function getROM(), which returns the address of a ROM file.
+	* Fixed including romSet.h twice in romSetHandler.c.
+	* Changed functions in romSetHandler.c to capitalize ROM in their names.
+	* Reallocating the ROM set array now casts the size of a RomFile instead of const char*.
+	* RomFiles can now be printed via printROMFile().
+	* Changed printRomSet() to printROMSet().
+	* printROMSet will now print data about the ROM set, including its ROM files.
+
 2025-05-13 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.2.0

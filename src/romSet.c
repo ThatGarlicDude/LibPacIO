@@ -16,6 +16,11 @@ RomSet newROMSet() {
 	return romSet;
 }
 
+// Returns the address of a ROM file.
+RomFile* getROM(RomSet* romSet, int index) {
+	return &(romSet->roms[index]);
+}
+
 // Frees the dynamic array inside the ROM set.
 void freeROMs(RomSet* romSet) {
 	free(romSet->roms);

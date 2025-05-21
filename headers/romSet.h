@@ -13,6 +13,9 @@
 	// Initializes a new ROM set.
 	RomSet newROMSet();
 
+	// Returns the address of a ROM file.
+	RomFile* getROM(RomSet* romSet, int index);
+
 	// Frees the dynamic array inside the ROM set.
 	void freeROMs(RomSet* romSet);
 
