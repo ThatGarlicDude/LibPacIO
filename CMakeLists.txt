@@ -1,11 +1,19 @@
-cmake_minimum_required(VERSION 3.12) # Cmake must be on version 3.12 or above to proceed.
-project(pacset VERSION 1.3.0) # Start the project.
+cmake_minimum_required(VERSION 3.18)
+project(pacset VERSION 1.4.0 LANGUAGES C)
 
-set(CMAKE_C_STANDARD 99) # C99 is required.
+# Set up specifications for the C compiler.
+set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
 
-FILE(GLOB SOURCES src/*.c) # Get all the files from the src directory.
+# Set output directories.
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_library(pacset SHARED ${SOURCES}) # Create the library.
+# Gather the files.
+FILE(GLOB SOURCES src/*.c)
+include_directories(${CMAKE_SOURCE_DIR}/headers)
 
-target_include_directories(pacset PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/headers) # Get the files in the header directory as well.
+# Output the project.
+add_library(pacset SHARED ${SOURCES})
+install(TARGETS pacset DESTINATION lib)

@@ -1,3 +1,14 @@
+2025-05-25 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 1.4.0
+	* Added INSTALL.md!
+	* CMakeLists.txt is much cleaner than it was before.
+	* LibPacSet now requires CMake version 3.18 or higher to make.
+	* LibPacSet now simply requires the C language to run.
+	* Made it so LibPacSet does not require C extensions when building.
+	* CMake now just simply includes the headers directory.
+	* Readded the install function.
+
 2025-05-21 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.3.0
