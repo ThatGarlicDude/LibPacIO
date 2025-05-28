@@ -1,3 +1,14 @@
+2025-05-28 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet version 1.6.0
+	* Added romIO.c and .h!
+	* romIO features reading and writing data from ROM files (finally).
+	* To make up for the addition of reading data, the RomFile struct now has a size and data array.
+	* Also, the read and write functionalities were moved to romIO instead of romFile.c.
+	* Adjusted the printing output from romSetPrinter.c.
+	* Added printROMData(), which prints both addresses and data in hexadecimal.
+	* Updated README.md, featuring the reading and writing functionalities.
+
 2025-05-26 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.5.0

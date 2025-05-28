@@ -2,7 +2,7 @@
 
 ## Overview
 
-LibPacSet is a shared library that contains tools for managing ROM files in the Pac-Man ROM set. These tools include setting up the virtual ROM set, adding ROM files into the set, and printing out the ROM set for debug purposes.
+LibPacSet is a shared library that contains tools for managing ROM files in the Pac-Man ROM set. These tools include setting up the virtual ROM set, adding ROM files into the set, reading and writing data to the ROM files, and printing out the ROM set for debug purposes.
 
 ## Copyright Disclaimer
 
