@@ -17,6 +17,6 @@
 	RomFile* getROM(RomSet* romSet, int index);
 
 	// Frees the dynamic array inside the ROM set.
-	void freeROMs(RomSet* romSet);
+	int freeROMs(RomSet* romSet);
 
 #endif

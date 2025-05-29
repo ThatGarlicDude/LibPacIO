@@ -1,6 +1,14 @@
 2025-05-28 GarlicDude <https://www.github.com/ThatGarlicDude>
 
-	LibPacSet version 1.6.0
+	LibPacSet Version 1.7.0
+	* RomFiles now use const char* again, just to make sure they don't get overwritten.
+	* With that change, functions use const char* arguments again.
+	* Added lots of failsafe stuff.
+	* Oh yeah, and also printing outputs for debugging.
+
+2025-05-28 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 1.6.0
 	* Added romIO.c and .h!
 	* romIO features reading and writing data from ROM files (finally).
 	* To make up for the addition of reading data, the RomFile struct now has a size and data array.

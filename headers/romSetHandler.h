@@ -4,6 +4,6 @@
 #define ROM_SET_HANDLER_H
 
 	// Appends a ROM file into a ROM set.
-	void appendROM(RomSet* romSet, char* romFilePath);
+	void appendROM(RomSet* romSet, const char* romFilePath);
 
 #endif
