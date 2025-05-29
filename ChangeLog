@@ -1,3 +1,8 @@
+2025-05-29 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 1.7.1
+	* Fixed printing data within ROM files by adding \n to it.
+
 2025-05-28 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.7.0

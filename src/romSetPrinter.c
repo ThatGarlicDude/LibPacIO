@@ -11,7 +11,7 @@ void printROMData(RomFile* romFile) {
 	}
 	// Print each of the ROM data in hexadecimal.
 	for (int index = 0; index < romFile->size; index++) {
-		printf("Address %04X: %02X", index, romFile->data[index]);
+		printf("Address %04X: %02X\n", index, romFile->data[index]);
 	}
 }
 
