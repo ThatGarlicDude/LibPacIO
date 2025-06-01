@@ -1,3 +1,57 @@
+2025-06-01 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 2.0.0
+	* MAJOR UPDATE TIME!
+	* romFile.c and .h are now called pacrom.c and .h.
+	* romSet.c and .h are now called pacset.c and .h.
+	* romSetPrinter.c and .h are now called pacprint.c and .h.
+	* romIO.c and .h are now called pacio.c and .h.
+	* Removed romSetHandler.c and .h.
+	* The typedef RomFile struct is now called pac_rom_t, with the tag being pac_rom.
+	* Rearranged some variables in the pac_rom_t struct.
+	* The struct's fileName is now called name, and it's no longer a constant.
+	* The struct's data now uses a uint8_t type instead of unsigned char.
+	* newROMFile is now called pac_rom_init, now requiring both a pac_rom_t* and const char* for the filename.
+	* pac_rom_t's filename can now duplicated to a safe location in memory.
+	* pac_rom_init now returns an int.
+	* Added pac_rom_t* pac_rom_create(const char* name), allocating a virtual ROM into memory.
+	* Added int pac_rom_clear(pac_rom_t* rom), which frees up and nullifies the virtual ROM's information from memory.
+	* Added void pac_rom_destroy(pac_rom_t* rom), which frees up the virtual ROM from memory.
+	* Added void pac_rom_set_name(pac_rom_t* rom, const char* name), which allocates a new filename string.
+	* getFileName() is now called pac_rom_get_name().
+	* getSize() is now called pac_rom_get_size().
+	* getData() is now called pac_rom_get_data(), which now returns a constant uint8_t pointer.
+	* The typedef RomSet struct is now called pac_set_t, now including a tag called pac_rom.
+	* The ROM array in the struct is now pac_rom_t** roms, now pointing to an array of ROM pointers.
+	* newROMSet() is now called pac_set_init(pac_set_t* set), and it returns an int instead of a ROM set.
+	* Added pac_set_t* pac_set_create(), allocating a virtual ROM set into memory.
+	* Added int pac_set_clear(pac_set_t* set), which frees up and nullifies the virtual ROM set's information from memory.
+	* Added void pac_set_destroy(pac_set_t* set), which frees up the virtual ROM set from memory.
+	* Added size_t pac_set_get_size(const pac_set_t* set), which returns the size of the ROM set.
+	* Added pac_rom_t** pac_set_get_roms(const pac_set_t* set), which returns the ROM pointer array.
+	* getROM() is now called pac_set_get_rom(const pac_set_t* set, const size_t index).
+	* Removed freeROMs(), as it is no longer necessary.
+	* Contents that were from romSetHandler.c and .h were now moved to pacset.c and .h.
+	* changeROMSetSize() is now called pac_set_change_size(pac_set_t* set, const size_t size).
+	* appendROM() is now called int pac_set_append_rom(pac_set_t* set, pac_rom_t* rom).
+	* readROM() is now called pac_rom_load(pac_rom_t* rom).
+	* writeROM() is now called pac_rom_save(pac_rom_t* rom).
+	* Removed freeROMData().
+	* Added pac_rom_unload(pac_rom_t* rom), which sets all the virtual bytes to 0 (not in the file).
+	* printROMData() is now called pac_rom_printd(pac_rom_t* rom).
+	* printROMFile() is now called pac_rom_print(pac_rom_t* rom).
+	* Added pac_set_printp(pac_set_t* set), which prints all the ROM pointers in the array.
+	* printROMSet() is now called pac_set_print(pac_set_t* set).
+	* Added test.c, which is only used for debugging the project.
+	* test.c will not be compiled onto the shared library.
+	* CMakeLists.txt no longer wildcards each file in the source directory, hardcoding each file instead.
+	* Added MAIN, which refers to src/test.c.
+	* CMakeLists.txt can now create a test executable called pacset_test.
+	* The executable will link LibPacSet upon compilation.
+	* Updated INSTALL.md, making it more polished and beginner friendly while including C99 as a requirement.
+	* Updated README.md, adding more clarity and flair to it.
+	* README.md also includes a list of all the functions in the project.
+
 2025-05-29 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 1.7.1
