@@ -1,3 +1,42 @@
+2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 2.1.0
+	* Source files can now include their own header files, making function calls easier and universal.
+	* Because of this change, source files that have typedef structs no longer have them anymore.
+		* Those structs are now defined in the header files.
+	* Header files are given a polished look.
+	* All functions are now compatible with C++.
+	* Added char path[] to pac_set_t.
+	* The roms array in pac_set_t is no longer a dynamic array, but now a static array.
+	* Because char path[] is added to pac_set_t, pac_set_init now requires a const char* path as the parameter.
+		* Also pac_set_create() too.
+	* Cleaned up pac_set_init, now only copying the path to its newly added path array.
+	* pac_set_create() now callocs the ROM set instead of malloc.
+	* pac_set_create() also now calls pac_set_init().
+	* pac_set_clear() now calls pac_rom_clear() in each pac_rom_t in its array.
+	* pac_set_clear() now memsets the whole struct with zeroes, clearing everything up.
+	* Added const char* pac_set_get_path(const pac_set_t* set).
+	* Because roms is now a pac_rom_t* array, it'll return a pac_rom_t* const* variable.
+	* Removed pac_set_change_size().
+	* pac_set_append_rom is now a tad bit cleaner.
+	* The name variable in pac_rom_t is now longer a dynamic string, but a static char array.
+	* pac_rom_init() is now cleaner, only copying the name argument to its name.
+	* pac_rom_create() now callocs the local pac_rom_t variable instead of mallocing it.
+	* pac_rom_create() now calls pac_rom_init().
+	* pac_rom_clear() can now call pac_rom_unload(), if it has any data in there.
+	* pac_rom_clear() now memsets the entire pac_rom_t struct with zeroes.
+	* All functions that have to do with initiating, clearing, and destroying structs now no longer returns an int.
+	* Removed pac_rom_set_name().
+	* pac_rom_load() no longer opens the file right away.
+		* Same with pac_rom_save().
+	* If a file doesn't exist while pac_rom_load is called, it'll now just close the file instead of leaving it open on accident.
+		* Also same with pac_rom_save().
+	* pac_rom_unload() is now put inbetween pac_rom_load() and pac_rom_save().
+	* Printing debug information for ROMs and ROM sets are now detailed with colors and bold text.
+	* Added paclimits.c and .h.
+		* paclimits.c and .h features read-only macros and getters for said macros.
+	* Updated README.md, featuring the newly added paclimits.c.
+
 2025-06-01 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 2.0.0

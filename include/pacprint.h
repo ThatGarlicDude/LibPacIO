@@ -1,8 +1,12 @@
-#include "pacrom.h"
-#include "pacset.h"
-
 #ifndef PACPRINT_H
-#define PACPRINT_H
+	#define PACPRINT_H
+
+	#include "pacrom.h"
+	#include "pacset.h"
+
+	#ifdef __cplusplus
+		extern "C" {
+	#endif
 
 	// Prints the entire ROM data.
 	void pac_rom_printd(const pac_rom_t* rom);
@@ -15,5 +19,9 @@
 
 	// Prints the entire data of a ROM set.
 	void pac_set_print(const pac_set_t* set);
+
+	#ifdef __cplusplus
+		}
+	#endif
 
 #endif

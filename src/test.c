@@ -11,39 +11,31 @@
 #define NAME_ROM_SET_TEST "ROM Set Test"
 
 // Tests a ROM's size, location, and clears memory.
-void single_rom_test() {
+void single_rom_test(void) {
 	pac_rom_t* rom = pac_rom_create("TestROM.4a");
 	pac_rom_print(rom);
 	pac_rom_destroy(rom);
-	rom = NULL;
 }
 
 // Tests 2 ROMs at once, and yes, showing the weird null-padding issue.
-void multi_rom_test() {
+void multi_rom_test(void) {
 	pac_rom_t* rom1 = pac_rom_create("TestROM.1b");
 	pac_rom_t* rom2 = pac_rom_create("TestROM.2h");
 	pac_rom_print(rom1);
 	pac_rom_print(rom2);
 	pac_rom_destroy(rom1);
 	pac_rom_destroy(rom2);
-	rom1 = NULL;
-	rom2 = NULL;
 }
 
 // Test out the ROM set.
-void rom_set_test() {
-	pac_set_t* set = pac_set_create();
+void rom_set_test(void) {
+	pac_set_t* set = pac_set_create("TestSet");
 	pac_rom_t* rom1 = pac_rom_create("GarlicDude.1b");
 	pac_rom_t* rom2 = pac_rom_create("OnionGal.2h");
 	pac_set_append_rom(set, rom1);
 	pac_set_append_rom(set, rom2);
 	pac_set_print(set);
 	pac_set_destroy(set);
-	pac_rom_destroy(rom1);
-	pac_rom_destroy(rom2);
-	set = NULL;
-	rom1 = NULL;
-	rom2 = NULL;
 }
 
 // Prints the heading of a test.
