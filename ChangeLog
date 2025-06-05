@@ -1,5 +1,14 @@
 2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.3.1
+	* Updated pacio.c and .h.
+		* Updated pac_path_generate().
+			* pac_path_generate now returns a char* instead of a const char*.
+	* Updated README.md.
+		* Updated the functions.
+
+2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.3.0
 	* Updated pacio.c and .h.
 		* Added const char* pac_path_generate(const char* path)!

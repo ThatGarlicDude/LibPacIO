@@ -91,7 +91,7 @@ int pac_rom_save(const pac_rom_t* rom) {
 }
 
 // Generates the absolute path.
-const char* pac_path_generate(const char* path) {
+char* pac_path_generate(const char* path) {
 	// Stop if there is no specifed path.
 	if (!path) {
 		return NULL;

@@ -47,7 +47,7 @@
 	int pac_set_unsave(const pac_rom_t* rom);
 
 	// Generates the absolute path.
-	const char* pac_path_generate(const char* path);
+	char* pac_path_generate(const char* path);
 
 	// Cleans out the absolute path.
 	void pac_path_clear(char* path);

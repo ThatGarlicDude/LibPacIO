@@ -30,6 +30,7 @@ void multi_rom_test(void) {
 // Test out the ROM set.
 void rom_set_test(void) {
 	pac_set_t* set = pac_set_create("TestSet");
+	pac_path_clear(cwd);
 	pac_rom_t* rom1 = pac_rom_create("GarlicDude.1b");
 	pac_rom_t* rom2 = pac_rom_create("OnionGal.2h");
 	pac_set_append_rom(set, rom1);
