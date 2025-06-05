@@ -5,6 +5,9 @@
 #include "pacrom.h"
 #include "pacio.h"
 
+// The pre-made size for pac_rom_t.
+const size_t PAC_ROM_SIZE = sizeof(pac_rom_t);
+
 // Initiates a new ROM.
 void pac_rom_init(pac_rom_t* rom, const char* name) {
 	// Stop if the ROM is null.
@@ -60,6 +63,40 @@ void pac_rom_destroy(pac_rom_t* rom) {
 	pac_rom_clear(rom);
 	free(rom);
 	return;
+}
+
+// Copies a ROM source to a destination.
+void pac_rom_copy(const pac_rom_t* rom_source, pac_rom_t* rom_destination) {
+	// Stop if either of the pointers are null.
+	if (!rom_source || !rom_destination) {
+		return;
+	}
+	// Go through each of the struct's bytes.
+	for (size_t index = 0; index < PAC_ROM_SIZE; index++) {
+		rom_destination[index] = rom_source[index];
+	}
+	return;
+}
+
+// Duplicates a ROM to a destination.
+pac_rom_t* pac_rom_duplicate(const pac_rom_t* rom_source) {
+	pac_rom_t* rom_destination;
+	// Stop if the ROM pointer is null.
+	if (!rom_source) {
+		return NULL;
+	}
+	// Create the new ROM destination.
+	rom_destination = pac_rom_create(rom_source->name);
+	// If it exists...
+	if (rom_destination) {
+		// Copy bytes from source to the destination.
+		pac_rom_copy(rom_source, rom_destination);
+		return rom_destination;
+	} else {
+		// Otherwise, free the ROM.
+		free(rom_destination);
+		return NULL;
+	}
 }
 
 // Returns a ROM's filename.

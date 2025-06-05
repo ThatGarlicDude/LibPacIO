@@ -28,6 +28,12 @@
 	// Destroy the ROM.
 	void pac_rom_destroy(pac_rom_t* rom);
 
+	// Copies a ROM source to a destination.
+	void pac_rom_copy(const pac_rom_t* rom_source, pac_rom_t* rom_destination);
+
+	// Duplicates a ROM to a destination.
+	pac_rom_t* pac_rom_duplicate(const pac_rom_t* rom_source);
+
 	// Returns a ROM's filename.
 	const char* pac_rom_get_name(const pac_rom_t* rom);
 

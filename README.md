@@ -12,6 +12,8 @@
 * `pac_set_t* pac_set_create(const char* path)`
 * `void pac_set_clear(pac_set_t* set)`
 * `void pac_set_destroy(pac_set_t* set)`
+* `void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination)`
+* `pac_set_t* pac_set_duplicate(const pac_set_t* set_source)`
 * `const char* pac_set_get_path(const pac_set_t* set)`
 * `size_t pac_set_get_size(const pac_set_t* set)`
 * `pac_rom_t* const* pac_set_get_roms(const pac_set_t* set)`
@@ -24,6 +26,8 @@
 * `pac_rom_t* pac_rom_create(const char* name)`
 * `void pac_rom_clear(pac_rom_t* rom)`
 * `void pac_rom_destroy(pac_rom_t* rom)`
+* `void pac_rom_copy(const pac_rom_t* rom_source, pac_rom_t* rom_destination)`
+* `pac_rom_t* pac_rom_duplicate(const pac_rom_t* rom_source)`
 * `const char* pac_rom_get_name(const pac_rom_t* rom)`
 * `size_t pac_rom_get_size(const pac_rom_t* rom)`
 * `const uint8_t* pac_rom_get_data(const pac_rom_t* rom)`

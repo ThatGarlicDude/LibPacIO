@@ -5,6 +5,9 @@
 #include "pacrom.h"
 #include "paclimits.h"
 
+// The pre-made size for pac_set_t.
+const size_t PAC_SET_SIZE = sizeof(pac_set_t);
+
 // Initializes a new ROM set.
 void pac_set_init(pac_set_t* set, const char* path) {
 	// Stop if the ROM set is null.
@@ -64,6 +67,40 @@ void pac_set_destroy(pac_set_t* set) {
 	pac_set_clear(set);
 	free(set);
 	return;
+}
+
+// Copies a ROM set source to a destination.
+void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination) {
+	// Stop if either of the pointers are null.
+	if (!set_source || !set_destination) {
+		return;
+	}
+	// Go through each of the struct's bytes.
+	for (size_t index = 0; index < PAC_SET_SIZE; index++) {
+		set_destination[index] = set_source[index];
+	}
+	return;
+}
+
+// Duplicates a ROM set to a destination.
+pac_set_t* pac_set_duplicate(const pac_set_t* set_source) {
+	pac_set_t* set_destination;
+	// Stop if the ROM set pointer is null.
+	if (!set_source) {
+		return NULL;
+	}
+	// Create the new ROM set destination.
+	set_destination = pac_set_create(set_source->path);
+	// If it exists...
+	if (set_destination) {
+		// Copy bytes from source to the destination.
+		pac_set_copy(set_source, set_destination);
+		return set_destination;
+	} else {
+		// Otherwise, free the ROM set.
+		free(set_destination);
+		return NULL;
+	}
 }
 
 // Returns the filepath of the ROM set.

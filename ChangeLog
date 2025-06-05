@@ -1,5 +1,27 @@
 2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.2.0
+	* Updated pacset.c and .h.
+		* Added void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination)!
+			* pac_set_copy copies the source ROM set to another ROM set, which is the destination.
+		* Added pac_set_t* pac_set_duplicate(const pac_set_t* set_source)!
+			* pac_set_duplicate allocates a new ROM set, which is the destination.
+			* pac_set_duplicate then copies each byte from the source to the destination.
+			* It'll return the newly allocated ROM set if successful.
+	* Updated pacrom.c and .h.
+		* Added void pac_rom_copy(const pac_rom_t* rom_source, pac_rom_t* rom_destination)!
+			* pac_rom_copy copies the source ROM to another ROM, which is the destination.
+		* Added pac_rom_t* pac_rom_duplicate(const pac_rom_t* rom_source)!
+			* pac_rom_duplicate allocates a new ROM, which is the destination.
+			* pac_rom_duplicate then copies each byte from the source to the destination.
+			* It'll return the newly allocated ROM if successful.
+	* Updated README.md
+		* Added the new functions to their respective categories.
+	* Updated CMakeLists.txt.
+		* The project now supports C++.
+
+2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.1.0
 	* Source files can now include their own header files, making function calls easier and universal.
 	* Because of this change, source files that have typedef structs no longer have them anymore.

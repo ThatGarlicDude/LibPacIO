@@ -28,6 +28,12 @@
 	// Destroys the ROM set.
 	void pac_set_destroy(pac_set_t* set);
 
+	// Copies a ROM set source to a destination.
+	void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination);
+
+	// Duplicates a ROM set to a destination.
+	pac_set_t* pac_set_duplicate(const pac_set_t* set_source);
+
 	// Returns the filepath of the ROM set.
 	const char* pac_set_get_path(const pac_set_t* set);
 
