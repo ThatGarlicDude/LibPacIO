@@ -5,10 +5,11 @@ Installing *LibPacSet* is very simple to do. Here are the things to follow to bu
 ## Requirements
 
 * C99
+* C++11
 * CMake versions 3.18 or higher
 * GNU Make
 
-C99 is used for understanding the C programming language--as well as its standard headers, CMake is used for building the project, and GNU Make is used for compiling the project onto your system.
+C99 is used for understanding the C programming language--as well as its standard headers, C++11 is used for understanding the C++ language, CMake is used for building the project, and GNU Make is used for compiling the project onto your system.
 
 To check the version of CMake, run `cmake --version` on your terminal. Make sure the version is higher than 3.18 so the project can be installed onto your system.
 

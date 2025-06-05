@@ -1,5 +1,21 @@
 2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.3.0
+	* Updated pacio.c and .h.
+		* Added const char* pac_path_generate(const char* path)!
+			* pac_path_generate returns the absolute path of a file or directory.
+			* It's also cross-platform.
+		* Added void pac_path_clear(char* path)!
+			* pac_path_clear cleans up the path string with zeroes, and frees the array.
+	* Updated README.md.
+		* README.md now includes the newly added functions from pacio.c and .h.
+	* Updated CMakeLists.md.
+		* CMakeLists now requires C++ 11, as well as its extensions, to run.
+	* Updated INSTALLMD.md.
+		* Included C++ 11 as part of the requirements.
+
+2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.2.0
 	* Updated pacset.c and .h.
 		* Added void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination)!

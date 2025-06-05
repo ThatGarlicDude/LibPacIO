@@ -37,6 +37,8 @@
 * `int pac_rom_load(pac_rom_t* rom)`
 * `int pac_rom_unload(pac_rom_t* rom)`
 * `int pac_rom_save(const pac_rom_t* rom)`
+* `const char* pac_path_generate(const char* path)`
+* `void pac_path_clear(char* path)`
 
 ### PacPrint
 

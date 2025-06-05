@@ -5,6 +5,9 @@
 #include <string.h>
 #include "pacrom.h"
 #include "pacio.h"
+#ifdef _WIN32
+	#include <windows.h>
+#endif
 
 // Loads data from a ROM file.
 int pac_rom_load(pac_rom_t* rom) {
@@ -85,4 +88,39 @@ int pac_rom_save(const pac_rom_t* rom) {
 	// Close the file.
 	fclose(file);
 	return 0;
+}
+
+// Generates the absolute path.
+const char* pac_path_generate(const char* path) {
+	// Stop if there is no specifed path.
+	if (!path) {
+		return NULL;
+	}
+	// Use Windows-only code if the user is compiling on Windows.
+	#ifdef _WIN32
+		char absolute_path* = malloc(MAX_PATH);
+		if (!absolute_path) {
+			free(absolute_path);
+			return NULL;
+		}
+		DWORD length = GetFullPathNameA(path, MAX_PATH, absolute_path, NULL);
+		if (length == 0 || length >= MAX_PATH) {
+			free(absolute_path);
+			return NULL;
+		}
+		return absolute_path;
+	#else
+		return realpath(path, NULL);
+	#endif
+}
+
+// Cleans out the absolute path.
+void pac_path_clear(char* path) {
+	// Stop if there's no path.
+	if (!path) {
+		return;
+	}
+	// Clean the whole absolute path.
+	memset(path, 0, strlen(path) + 1);
+	free(path);
 }
