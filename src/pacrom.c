@@ -29,8 +29,8 @@ void pac_rom_init(pac_rom_t* rom, const char* name) {
 		return;
 	}
 	pac_info(NAME_PAC_ROM_INIT, "Copying string to the ROM's name...");
-	strncpy(rom->name, name, PAC_NAME_MAX);
-	rom->name[PAC_NAME_MAX] = '\0';
+	strncpy(rom->name, name, PAC_NAME_MAX - 1);
+	rom->name[PAC_NAME_MAX - 1] = '\0';
 	pac_info(NAME_PAC_ROM_INIT, "Initiating the ROM's other properties...");
 	rom->size = 0;
 	rom->data = NULL;
@@ -59,8 +59,10 @@ void pac_rom_clear(pac_rom_t* rom) {
 		pac_warn(NAME_PAC_ROM_CLEAR, "ROM pointer is NULL!");
 		return;
 	}
-	pac_info(NAME_PAC_ROM_CLEAR, "Proceeding to unload the ROM...");
-	pac_rom_unload(rom);
+	if (rom->data) {
+		pac_info(NAME_PAC_ROM_CLEAR, "Proceeding to unload the ROM...");
+		pac_rom_unload(rom);
+	}
 	pac_info(NAME_PAC_ROM_CLEAR, "Freeing the ROM data...");
 	free(rom->data);
 	pac_info(NAME_PAC_ROM_CLEAR, "Clearing the ROM with zeroes...");
@@ -90,9 +92,7 @@ void pac_rom_copy(const pac_rom_t* rom_source, pac_rom_t* rom_destination) {
 		return;
 	}
 	pac_info(NAME_PAC_ROM_COPY, "Going through each byte of the struct to copy...");
-	for (size_t index = 0; index < PAC_ROM_SIZE; index++) {
-		rom_destination[index] = rom_source[index];
-	}
+	memcpy(rom_destination, rom_source, PAC_ROM_SIZE);
 	pac_info(NAME_PAC_ROM_COPY, "Successfully copied ROM!");
 	return;
 }
@@ -117,34 +117,28 @@ pac_rom_t* pac_rom_duplicate(const pac_rom_t* rom_source) {
 
 // Returns a ROM's filename.
 const char* pac_rom_get_name(const pac_rom_t* rom) {
-	pac_info(NAME_PAC_ROM_GET_NAME, "Getting the filename from the ROM...");
 	if (!rom) {
 		pac_warn(NAME_PAC_ROM_GET_NAME, "ROM pointer is NULL!");
 		return NULL;
 	}
-	pac_info(NAME_PAC_ROM_GET_NAME, "Successfully got the ROM name!");
 	return rom->name;
 }
 
 // Returns a ROM's size.
 size_t pac_rom_get_size(const pac_rom_t* rom) {
-	pac_info(NAME_PAC_ROM_GET_SIZE, "Getting the size from the ROM...");
 	if (!rom) {
 		pac_warn(NAME_PAC_ROM_GET_SIZE, "ROM pointer is NULL!");
 		return 0;
 	}
-	pac_info(NAME_PAC_ROM_GET_SIZE, "Successfully got the ROM size!");
 	return rom->size;
 }
 
 // Returns a ROM's data.
 const uint8_t* pac_rom_get_data(const pac_rom_t* rom) {
-	pac_info(NAME_PAC_ROM_GET_DATA, "Getting the data pointer from the ROM...");
 	if (!rom) {
 		pac_warn(NAME_PAC_ROM_GET_DATA, "ROM pointer is NULL!");
 		return NULL;
 	}
-	pac_info(NAME_PAC_ROM_GET_DATA, "Successfully got the ROM data pointer!");
 	return rom->data;
 }
 

@@ -3,6 +3,7 @@
 #include <string.h>
 #include "pacset.h"
 #include "pacrom.h"
+#include "pacio.h"
 #include "paclimits.h"
 #include "pacerror.h"
 
@@ -30,8 +31,8 @@ void pac_set_init(pac_set_t* set, const char* path) {
 		return;
 	}
 	pac_info(NAME_PAC_SET_INIT, "Copying string to the ROM set's path...");
-	strncpy(set->path, path, PAC_PATH_MAX);
-	set->path[PAC_PATH_MAX] = '\0';
+	strncpy(set->path, path, PAC_PATH_MAX - 1);
+	set->path[PAC_PATH_MAX - 1] = '\0';
 	pac_info(NAME_PAC_SET_INIT, "Setting size of the ROM set...");
 	set->size = 0;
 	pac_info(NAME_PAC_SET_INIT, "Setting the ROMs array with zeroes...");
@@ -50,6 +51,7 @@ pac_set_t* pac_set_create(const char* path) {
 	}
 	pac_info(NAME_PAC_SET_CREATE, "ROM set allocation successful! Now initiating the ROM set...");
 	pac_set_init(set, path);
+	pac_set_scan_directory(set);
 	pac_info(NAME_PAC_SET_CREATE, "Successfully created ROM set!");
 	return set;
 }
@@ -66,8 +68,8 @@ void pac_set_clear(pac_set_t* set) {
 		if (!set->roms[index]) {
 			continue;
 		}
-		pac_info(NAME_PAC_SET_CLEAR, "Found ROM! Clearing...");
-		pac_rom_clear(set->roms[index]);
+		pac_info(NAME_PAC_SET_CLEAR, "Found ROM! Destroying it...");
+		pac_rom_destroy(set->roms[index]);
 	}
 	pac_info(NAME_PAC_SET_CLEAR, "Cleaning the ROM set with zeroes...");
 	memset(set, 0, PAC_SET_SIZE);
@@ -96,9 +98,7 @@ void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination) {
 		return;
 	}
 	pac_info(NAME_PAC_SET_COPY, "Going through each byte of the struct to copy...");
-	for (size_t index = 0; index < PAC_SET_SIZE; index++) {
-		set_destination[index] = set_source[index];
-	}
+	memcpy(set_destination, set_source, PAC_SET_SIZE);
 	pac_info(NAME_PAC_SET_COPY, "Successfully copied ROM set!");
 	return;
 }
@@ -123,45 +123,37 @@ pac_set_t* pac_set_duplicate(const pac_set_t* set_source) {
 
 // Returns the filepath of the ROM set.
 const char* pac_set_get_path(const pac_set_t* set) {
-	pac_info(NAME_PAC_SET_GET_PATH, "Getting the filepath from the ROM set...");
 	if (!set) {
 		pac_warn(NAME_PAC_SET_GET_PATH, "ROM set pointer is NULL!");
 		return NULL;
 	}
-	pac_info(NAME_PAC_SET_GET_PATH, "Successfully got the ROM set path!");
 	return set->path;
 }
 
 // Returns the size of the ROM set.
 size_t pac_set_get_size(const pac_set_t* set) {
-	pac_info(NAME_PAC_SET_GET_SIZE, "Getting the size from the ROM set...");
 	if (!set) {
 		pac_warn(NAME_PAC_SET_GET_SIZE, "ROM set pointer is NULL!");
 		return 0;
 	}
-	pac_info(NAME_PAC_SET_GET_SIZE, "Successfully got the ROM set size!");
 	return set->size;
 }
 
 // Returns the ROMs array in the ROM set.
 pac_rom_t* const* pac_set_get_roms(const pac_set_t* set) {
-	pac_info(NAME_PAC_SET_GET_ROMS, "Getting the ROMs array from the ROM set...");
 	if (!set) {
 		pac_warn(NAME_PAC_SET_GET_ROMS, "ROM set pointer is NULL!");
 		return NULL;
 	}
-	pac_info(NAME_PAC_SET_GET_ROMS, "Successfully got the ROMs array!");
 	return set ? set->roms : NULL;
 }
 
 // Returns the address of a ROM file.
 const pac_rom_t* pac_set_get_rom(const pac_set_t* set, const size_t index) {
-	pac_info(NAME_PAC_SET_GET_ROM, "Getting a ROM from the ROM set...");
 	if (!set) {
 		pac_warn(NAME_PAC_SET_GET_ROM, "ROM set pointer is NULL!");
 		return NULL;
 	}
-	pac_info(NAME_PAC_SET_GET_ROM, "Successfully got the ROM!");
 	return set->roms[index];
 }
 

@@ -14,6 +14,7 @@
 const char* NAME_PAC_ROM_LOAD = "pac_rom_load";
 const char* NAME_PAC_ROM_UNLOAD = "pac_rom_unload";
 const char* NAME_PAC_ROM_SAVE = "pac_rom_save";
+const char* NAME_PAC_SET_SCAN_DIR = "pac_set_scan_dir";
 const char* NAME_PAC_PATH_GENERATE = "pac_path_generate";
 const char* NAME_PAC_PATH_CLEAR = "pac_path_clear";
 
@@ -48,9 +49,7 @@ int pac_rom_load(pac_rom_t* rom) {
 		return -1;
 	}
 	pac_info(NAME_PAC_ROM_LOAD, "Extracting bytes to the struct's data...");
-	for (size_t index = 0; index < rom->size; index++) {
-		rom->data[index] = fgetc(file);
-	}
+	fread(rom->data, 1, rom->size, file);
 	pac_info(NAME_PAC_ROM_LOAD, "Successfully loaded ROM!");
 	fclose(file);
 	return 0;
@@ -89,9 +88,38 @@ int pac_rom_save(const pac_rom_t* rom) {
 		return -1;
 	}
 	pac_info(NAME_PAC_ROM_SAVE, "Overwriting data to the ROM file...");
-	fputs(rom->data, file);
+	fwrite(rom->data, 1, rom->size, file);
 	pac_info(NAME_PAC_ROM_SAVE, "Successfully saved ROM!");
 	fclose(file);
+	return 0;
+}
+
+// Scans the ROM set directory, gathering the ROM files.
+int pac_set_scan_directory(pac_set_t* set) {
+	pac_info(NAME_PAC_SET_SCAN_DIR, "Scanning ROM directory...");
+	if (!set) {
+		pac_warn(NAME_PAC_SET_SCAN_DIR, "ROM set pointer is NULL!");
+		return -1;
+	}
+	pac_info(NAME_PAC_SET_SCAN_DIR, "Opening directory...");
+	DIR* directory = opendir(set->path);
+	struct dirent* entry;
+	if (!directory) {
+		pac_error(NAME_PAC_SET_SCAN_DIR, "Failed to open directory.");
+		closedir(directory);
+		return -1;
+	}
+	pac_info(NAME_PAC_SET_SCAN_DIR, "Directory opened! Gathering ROM files...");
+	while ((entry = readdir(directory))) {
+		// Avoid files "." and "../" Those refer to itself and its parent directory.
+		if (entry->d_name[0] == '.') {
+			continue;
+		}
+		pac_rom_t* rom = pac_rom_create(entry->d_name);
+		pac_set_append_rom(set, rom);
+	}
+	pac_info(NAME_PAC_SET_SCAN_DIR, "Successfully scanned ROM directory!");
+	closedir(directory);
 	return 0;
 }
 

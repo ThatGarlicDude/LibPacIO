@@ -34,7 +34,10 @@
 	// Unsaves data???? But how can a file get unsaved lol???
 	int pac_rom_unsave(const pac_rom_t* rom);
 
-	// Loads a ROM set into memory.
+	// Scans the ROM set directory, gathering the ROM files.
+	int pac_set_scan_directory(pac_set_t* set);
+
+	// Loads all the ROMs' data from memory.
 	int pac_set_load(const pac_set_t* set);
 
 	// Unloads all the ROMs' data from memory.

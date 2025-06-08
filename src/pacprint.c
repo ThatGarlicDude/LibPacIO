@@ -75,7 +75,6 @@ void pac_set_print(const pac_set_t* set) {
 	pac_set_printp(set);
 	// Go through each of the ROMs in the set.
 	for (size_t index = 0; index < set->size; index++) {
-		const pac_rom_t* rom = pac_set_get_rom(set, index);
-		pac_rom_print(rom);
+		pac_rom_print(set->roms[index]);
 	}
 }

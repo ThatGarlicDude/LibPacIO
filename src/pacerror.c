@@ -13,7 +13,7 @@ const uint8_t PAC_INFO_VERBOSE = 0;
 
 // Prints info on the terminal.
 void pac_info(const char* function_name, const char* message) {
-	if (PAC_INFO_VERBOSE) return;
+	if (!PAC_INFO_VERBOSE) return;
 	printf("%s%s:%s %s\n", COLOR_INFO, function_name, COLOR_DEFAULT, message);
 	return;
 }

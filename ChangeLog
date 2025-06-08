@@ -1,5 +1,35 @@
 2025-06-08 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.5.0
+	* Updated PacError.
+		* Checking PAC_INFO_VERBOSE before printing the output is inverted.
+	* Updated PacIO.
+		* Instead of using a for loop, pac_rom_read now uses fread().
+		* Same goes for pac_rom_save with fwrite().
+		* Added int pac_set_scan_directory(pac_set_t* set)!
+			* Uses the dirent feature to open up the ROM set directory.
+			* Goes through each file, and appends them onto the virtual ROM set.
+	* Updated PacRom.
+		* Copying the name won't go out of bounds anymore.
+		* Same with the null terminator. That won't go out of bounds anymore.
+		* Clearing the ROM will now check if the data points to anything before unloading it.
+		* Instead of using a for loop, copying a ROM now uses memcpy().
+		* Getting the name of the ROM set no longer prints information.
+		* Same with getting the size.
+		* Also same with getting the data pointer.
+	* Updated PacSet.
+		* Like PacRom, copying the name won't go out of bounds anymore.
+		* Same with the null terminator character.
+		* Creating the set will automatically call the newly added pac_set_scan_directory.
+		* Clearing the ROM set now destroys ROMs instead of clearing them.
+			* (Not actually sure about that though. What about local, stack-pushed ROM variables?)
+		* Also like PacRom, copying data from one ROM set to another uses memcpy().
+		* Getting filepath no longer prints any info anymore.
+		* Same with getting the size.
+		* Same with getting the ROMs array.
+
+2025-06-08 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.4.0
 	* Added pacerror.c and .h!
 		* Pacerror.c and .h features three functions, pac_info(), pac_warn(), and pac_error().
