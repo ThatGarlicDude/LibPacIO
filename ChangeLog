@@ -1,5 +1,14 @@
 2025-06-08 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.5.1
+	* Updated PacLimits.
+		* Incremented each macro by one.
+		* Because of this change, each and every one of the returning values get subtracted by one.
+	* Updated README.md.
+		* Included the newly added pac_set_scan_directory() function.
+
+2025-06-08 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.5.0
 	* Updated PacError.
 		* Checking PAC_INFO_VERBOSE before printing the output is inverted.

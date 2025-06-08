@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(pacset VERSION 2.5.0 LANGUAGES C CXX)
+project(pacset VERSION 2.5.1 LANGUAGES C CXX)
 
 # Set up specifications for the C compiler.
 set(CMAKE_C_STANDARD 99)

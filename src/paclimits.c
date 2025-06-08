@@ -3,15 +3,15 @@
 
 // Returns the maximum filename length.
 const uint8_t get_pac_name_max(void) {
-	return PAC_NAME_MAX;
+	return PAC_NAME_MAX - 1;
 }
 
 // Returns the maximum filepath length.
 const uint8_t get_pac_path_max(void) {
-	return PAC_PATH_MAX;
+	return PAC_PATH_MAX - 1;
 }
 
 // Returns the maximum amount of ROMs in a ROM set.
 const uint8_t get_pac_roms_max(void) {
-	return PAC_ROMS_MAX;
+	return PAC_ROMS_MAX - 1;
 }
