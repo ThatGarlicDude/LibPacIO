@@ -1,3 +1,16 @@
+2025-06-08 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 2.4.0
+	* Added pacerror.c and .h!
+		* Pacerror.c and .h features three functions, pac_info(), pac_warn(), and pac_error().
+		* pac_info() is basic debug output to the terminal.
+		* pac_warn() prints warning messages to the terminal.
+		* pac_error() prints error messages to the terminal.
+		* Users can have the option to silence pac_info() if they don't want debug info being printed out.
+		* Because of this change, most of the code now uses the pacerror functions.
+	* Updated README.md!
+		* README.md now features functions from the newly added PacError.
+
 2025-06-05 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 2.3.1

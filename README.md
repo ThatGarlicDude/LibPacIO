@@ -53,6 +53,12 @@
 * `const uint8_t get_pac_path_max(void)`
 * `const uint8_t get_pac_roms_max(void)`
 
+### PacError
+
+* `void pac_info(const char* function_name, const char* message)`
+* `void pac_warn(const char* function_name, const char* message)`
+* `void pac_error(const char* function_name, const char* message)`
+
 ## Copyright Disclaimer
 
 This is not an official product by Bandai Namco. *Pac-Man* is owned by Bandai Namco, and *LibPacSet* is created by GarlicDude. Moreover, *LibPacSet* does not distribute any ROMs, code, or assets related to *Pac-Man*.
