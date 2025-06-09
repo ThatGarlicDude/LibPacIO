@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(pacset VERSION 2.5.1 LANGUAGES C CXX)
+project(pacset VERSION 2.6.0 LANGUAGES C CXX)
 
 # Set up specifications for the C compiler.
 set(CMAKE_C_STANDARD 99)
@@ -31,8 +31,17 @@ FILE(GLOB SOURCES
 # Output the library.
 add_library(pacset SHARED ${SOURCES})
 target_include_directories(pacset PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-install(TARGETS pacset DESTINATION lib)
+IF (WIN32)
+	install(TARGETS pacset)
+ELSE()
+	install(TARGETS pacset DESTINATION lib)
+ENDIF()
+
 # Output the test executable.
 add_executable(pacset_test ${MAIN})
 target_link_libraries(pacset_test PRIVATE pacset)
-install(TARGETS pacset_test DESTINATION bin)
+IF (WIN32)
+	install(TARGETS pacset_test)
+ELSE()
+	install(TARGETS pacset_test DESTINATION bin)
+ENDIF()

@@ -1,3 +1,18 @@
+2025-06-09 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacSet Version 2.6.0
+	* Updated INSTALL.md!
+		* Added compilers from different platforms!
+		* Updated the definitions for each item in the requirements.
+		* Fixed the grammar in checking the CMake version.
+		* INSTALL.md now alerts users that installing the project requires admin rights.
+		* Added steps to install LibPacSet on Microsoft Windows.
+		* Added steps to install LibPacSet on Apple Mac.
+	* Updated .gitignore.
+		* Added .DS_Store.
+	* Updated CMakeLists.txt.
+		* Installing LibPacSet and its test executable is different on Windows now.
+
 2025-06-08 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacSet Version 2.5.1
