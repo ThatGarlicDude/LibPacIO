@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(pacset VERSION 2.6.0 LANGUAGES C CXX)
+project(pacset VERSION 2.7.0 LANGUAGES C CXX)
 
 # Set up specifications for the C compiler.
 set(CMAKE_C_STANDARD 99)
@@ -24,6 +24,7 @@ FILE(GLOB SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/src/pacprint.c
 	${CMAKE_CURRENT_SOURCE_DIR}/src/pacrom.c
 	${CMAKE_CURRENT_SOURCE_DIR}/src/pacset.c
+	${CMAKE_CURRENT_SOURCE_DIR}/src/pacsort.c
 	${CMAKE_CURRENT_SOURCE_DIR}/src/paclimits.c
 	${CMAKE_CURRENT_SOURCE_DIR}/src/pacerror.c
 )

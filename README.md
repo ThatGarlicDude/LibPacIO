@@ -41,6 +41,13 @@
 * `char* pac_path_generate(const char* path)`
 * `void pac_path_clear(char* path)`
 
+### PacSort
+
+* `int pac_set_sort(pac_set_t* set)`
+* `void pac_rom_swap(pac_rom_t** rom_a, pac_rom_t** rom_b)`
+* `int pac_rom_compare(pac_rom_t* rom_a, pac_rom_t* rom_b)`
+* `int pac_set_find_lowest_rom(const pac_set_t* set, const off_t offset)`
+
 ### PacPrint
 
 * `void pac_set_print(const pac_set_t* set)`

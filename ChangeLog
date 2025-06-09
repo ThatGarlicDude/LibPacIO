@@ -1,5 +1,17 @@
 2025-06-09 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.7.0
+	* Added pacsort.c and .h!
+		* This file is used for sorting ROM files within a ROM set in lexicographical order.
+		* int pac_set_sort(pac_set_t* set) is the start of the sorting process!
+		* void pac_rom_swap(pac_rom_t** rom_a, pac_rom_t** rom_b) swaps two ROMs together.
+		* int pac_rom_compare(pac_rom_t* rom_a, pac_rom_t* rom_b) string compares two ROM names.
+		* int pac_set_find_lowest_rom(const pac_set_t* set, const off_t offset) looks for an index in the ROM set that has the lowest ROM filename.
+	* Updated README.md.
+		* Added functions from PacSort.
+
+2025-06-09 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.6.0
 	* Updated INSTALL.md!
 		* Added compilers from different platforms!

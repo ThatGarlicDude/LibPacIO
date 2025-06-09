@@ -3,8 +3,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include "pacrom.h"
 #include "pacio.h"
+#include "pacrom.h"
+#include "pacset.h"
 #include "paclimits.h"
 #include "pacerror.h"
 #ifdef _WIN32

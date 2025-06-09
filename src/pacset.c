@@ -3,6 +3,7 @@
 #include <string.h>
 #include "pacset.h"
 #include "pacrom.h"
+#include "pacsort.h"
 #include "pacio.h"
 #include "paclimits.h"
 #include "pacerror.h"
@@ -52,6 +53,7 @@ pac_set_t* pac_set_create(const char* path) {
 	pac_info(NAME_PAC_SET_CREATE, "ROM set allocation successful! Now initiating the ROM set...");
 	pac_set_init(set, path);
 	pac_set_scan_directory(set);
+	pac_set_sort(set);
 	pac_info(NAME_PAC_SET_CREATE, "Successfully created ROM set!");
 	return set;
 }
