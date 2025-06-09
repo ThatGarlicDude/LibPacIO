@@ -34,6 +34,8 @@
 
 ### PacIO
 
+* `uint8_t pac_rom_read(pac_rom_t* rom, const off_t offset)`
+* `void pac_rom_readn(pac_rom_t* rom, const off_t offset, const size_t amount, uint8_t* destination)`
 * `int pac_rom_load(pac_rom_t* rom)`
 * `int pac_rom_unload(pac_rom_t* rom)`
 * `int pac_rom_save(const pac_rom_t* rom)`

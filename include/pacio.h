@@ -11,7 +11,7 @@
 	#endif
 
 	// Reads a single byte in memory.
-	void pac_rom_read(pac_rom_t* rom, const off_t offset, uint8_t* destination);
+	uint8_t pac_rom_read(pac_rom_t* rom, const off_t offset);
 
 	// Reads multiple bytes in memory.
 	void pac_rom_readn(pac_rom_t* rom, const off_t offset, const size_t amount, uint8_t* destination);

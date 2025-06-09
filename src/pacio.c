@@ -12,12 +12,35 @@
 	#include <windows.h>
 #endif
 
+const char* NAME_PAC_ROM_READ = "pac_rom_read";
+const char* NAME_PAC_ROM_READN = "pac_rom_readn";
 const char* NAME_PAC_ROM_LOAD = "pac_rom_load";
 const char* NAME_PAC_ROM_UNLOAD = "pac_rom_unload";
 const char* NAME_PAC_ROM_SAVE = "pac_rom_save";
 const char* NAME_PAC_SET_SCAN_DIR = "pac_set_scan_dir";
 const char* NAME_PAC_PATH_GENERATE = "pac_path_generate";
 const char* NAME_PAC_PATH_CLEAR = "pac_path_clear";
+
+// Reads a single byte in memory.
+uint8_t pac_rom_read(pac_rom_t* rom, const off_t offset) {
+	if (!rom || !rom->data) {
+		pac_warn(NAME_PAC_ROM_READ, "Either the ROM or data pointer is NULL!");
+		return 0;
+	}
+	return rom->data[offset];
+}
+
+// Reads multiple bytes in memory.
+void pac_rom_readn(pac_rom_t* rom, const off_t offset, const size_t amount, uint8_t* destination) {
+	if (!rom || !rom->data || !destination) {
+		pac_warn(NAME_PAC_ROM_READN, "ROM, data, or destination pointer is NULL!");
+		return;
+	}
+	// Might need to memcpy this instead of a for loop.
+	for (size_t index = 0; index < amount; index++) {
+		destination[index] = pac_rom_read(rom, offset);
+	}
+}
 
 // Loads data from a ROM file.
 int pac_rom_load(pac_rom_t* rom) {

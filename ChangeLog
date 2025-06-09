@@ -1,5 +1,16 @@
 2025-06-09 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacSet Version 2.8.0
+	* Updated PacIO.
+		* Added uint8_t pac_rom_read(pac_rom_t* rom, const off_t offset)!
+			* It'll read a single byte in memory when the ROM file is opened.
+		* Added void pac_rom_readn(pac_rom_t* rom, const off_t offset, const size_t amount, uint8_t* destination)!
+			* Like pac_rom_read, it'll read multiple bytes in memory.
+	* Updated README.md.
+		* Included the newly added functions from PacIO.
+
+2025-06-09 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacSet Version 2.7.0
 	* Added pacsort.c and .h!
 		* This file is used for sorting ROM files within a ROM set in lexicographical order.
