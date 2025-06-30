@@ -1,2 +1,8 @@
+# Ignore everything in the build directory.
 build/
+
+# Ignore the annoying .DS_Store files.
 .DS_Store
+
+# Ignore the .swp files.
+.swp

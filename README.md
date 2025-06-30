@@ -1,76 +1,21 @@
-# ![LibPacSet Logo](./assets/title/title_4x.png)
+# ![LibPacIO](./docs/images/libpacio/logo/logo_4x.png)
 
 ## Overview
 
-*LibPacSet* is a shared library that contains tools for managing ROM files in *Pac-Man*. These tools include creating virtual ROM sets, as well as virtual ROMs. Additionally, it can save and load data by reading and writing the ROM files from your copy of *Pac-Man*, making it the go-to tool for ROM-hacking the game. It also contains debugging tools, like printing information about the virtual ROMs and the ROM sets onto the terminal.
+*LibPacIO* is a shared library used for accessing and modifying the arcade versions of *Pac-Man* and *Ms. Pac-Man*. It is not a sprite or level editor, but it is a general-purpose toolbox for other programs to use and hack the games. Moreover, *LibPacIO* features functions for opening the ROM set directories for both games, as well as saving and loading the games' ROM data. In that case, *LibPacIO* is a core utility for ROM-hacking both *Pac-Man* and *Ms. Pac-Man*.
 
-## Functions
+In addition to this, *LibPacIO* is also beginner-friendly. It features a couple of tutorials, like [installing the library onto your system](./docs/INSTALL.md) and [using the shared library](./docs/USAGE.md). If you want to get started with *LibPacIO* and get into *Pac-Man* ROM-hacking, these tutorials are worth looking into.
 
-### PacSet
+## Systems Supported
 
-* `void pac_set_init(pac_set_t* set, const char* path)`
-* `pac_set_t* pac_set_create(const char* path)`
-* `void pac_set_clear(pac_set_t* set)`
-* `void pac_set_destroy(pac_set_t* set)`
-* `void pac_set_copy(const pac_set_t* set_source, pac_set_t* set_destination)`
-* `pac_set_t* pac_set_duplicate(const pac_set_t* set_source)`
-* `const char* pac_set_get_path(const pac_set_t* set)`
-* `size_t pac_set_get_size(const pac_set_t* set)`
-* `pac_rom_t* const* pac_set_get_roms(const pac_set_t* set)`
-* `const pac_rom_t* pac_set_get_rom(const pac_set_t* set, const size_t index)`
-* `int pac_set_append_rom(pac_set_t* set, pac_rom_t* rom)`
-
-### PacRom
-
-* `void pac_rom_init(pac_rom_t* rom, const char* name)`
-* `pac_rom_t* pac_rom_create(const char* name)`
-* `void pac_rom_clear(pac_rom_t* rom)`
-* `void pac_rom_destroy(pac_rom_t* rom)`
-* `void pac_rom_copy(const pac_rom_t* rom_source, pac_rom_t* rom_destination)`
-* `pac_rom_t* pac_rom_duplicate(const pac_rom_t* rom_source)`
-* `const char* pac_rom_get_name(const pac_rom_t* rom)`
-* `size_t pac_rom_get_size(const pac_rom_t* rom)`
-* `const uint8_t* pac_rom_get_data(const pac_rom_t* rom)`
-
-### PacIO
-
-* `uint8_t pac_rom_read(pac_rom_t* rom, const off_t offset)`
-* `void pac_rom_readn(pac_rom_t* rom, const off_t offset, const size_t amount, uint8_t* destination)`
-* `int pac_rom_load(pac_rom_t* rom)`
-* `int pac_rom_unload(pac_rom_t* rom)`
-* `int pac_rom_save(const pac_rom_t* rom)`
-* `int pac_set_scan_directory(pac_set_t* set)`
-* `char* pac_path_generate(const char* path)`
-* `void pac_path_clear(char* path)`
-
-### PacSort
-
-* `int pac_set_sort(pac_set_t* set)`
-* `void pac_rom_swap(pac_rom_t** rom_a, pac_rom_t** rom_b)`
-* `int pac_rom_compare(pac_rom_t* rom_a, pac_rom_t* rom_b)`
-* `int pac_set_find_lowest_rom(const pac_set_t* set, const off_t offset)`
-
-### PacPrint
-
-* `void pac_set_print(const pac_set_t* set)`
-* `void pac_set_printp(const pac_set_t* set)`
-* `void pac_rom_print(const pac_rom_t* rom)`
-* `void pac_rom_printd(const pac_rom_t* rom)`
-
-### PacLimits
-
-* `const uint8_t get_pac_name_max(void)`
-* `const uint8_t get_pac_path_max(void)`
-* `const uint8_t get_pac_roms_max(void)`
-
-### PacError
-
-* `void pac_info(const char* function_name, const char* message)`
-* `void pac_warn(const char* function_name, const char* message)`
-* `void pac_error(const char* function_name, const char* message)`
+![Linux Support](https://img.shields.io/badge/Linux-Supported-brightgreen?style=for-the-badge&logo=linux&logoColor=white)
+![MacOS Support](https://img.shields.io/badge/MacOS-Supported-brightgreen?style=for-the-badge&logo=apple&logoColor=white)
+![Windows Support](https://img.shields.io/badge/Windows-Not_Supported-darkred?style=for-the-badge&logo=windows11&logoColor=white)
 
 ## Copyright Disclaimer
 
-This is not an official product by Bandai Namco. *Pac-Man* is owned by Bandai Namco, and *LibPacSet* is created by GarlicDude. Moreover, *LibPacSet* does not distribute any ROMs, code, or assets related to *Pac-Man*.
+This is not an official product of Bandai Namco or AtGames. *Pac-Man* and *Ms. Pac-Man* are trademarks of Bandai Namco Entertainment Inc. Conversely, AtGames holds the royalty rights to *Ms. Pac-Man* stemming from historical agreements, but Bandai Namco retains all the intellectual property rights. Moreover, *LibPacIO* is created by GarlicDude as a fan-made utility used for educational and research purposes. Additionally, *LibPacIO* does not distribute any ROMs or code related to the respective games. To use *LibPacIO*, you must own a legal copy of either *Pac-Man* or *Ms. Pac-Man*.
 
-The logo and title for *LibPacSet* uses the Press Start 2P text font. Press Start 2P is owned by CodeMan38.
+The logo for *LibPacIO* uses the Press Start 2P text font. Press Start 2P is owned by CodeMan38.
+
+All trademarks and copyrights, including *Pac-Man* and *Ms. Pac-Man*, are the property of their respective owners.
