@@ -1,5 +1,22 @@
 2025-07-02 GarlicDude <https://www.github.com/ThatGarlicDude>
 
+	LibPacIO Version 3.1.0
+	* Updated README.md.
+		* Actually spaced the System Support badges this time (jeez).
+	* Updated CMakeLists.txt.
+		* Made the PacIO version up-to-date.
+		* Added another project called pacio_test.
+		* This is done, so pacio_test can be up-to-date via CMake.
+	* Updated the include directory.
+		* Include now features main and test directories, like in src.
+		* Added pacio_test.h inside the test directory inside the include folder.
+	* Updated the src/main files.
+		* Including the files inside the repository now uses "main/file.h" instead of <libpacio/file.h>.
+	* Updated pacio_test.c.
+		* Code now includes itself.
+
+2025-07-02 GarlicDude <https://www.github.com/ThatGarlicDude>
+
 	LibPacIO Version 3.0.1
 	* Updated README.md.
 		* Added spacing between the System Support badges.

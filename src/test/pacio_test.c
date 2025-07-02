@@ -5,6 +5,7 @@
 #include <libpacio/pacrom.h>
 #include <libpacio/pacromset.h>
 #include <libpacio/print.h>
+#include "test/pacio_test.h"
 
 #define DEFAULT_PATH "."
 #define DEFAULT_TEST "romset_test" // UNUSED Refers to which test you want to run.

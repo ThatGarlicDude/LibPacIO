@@ -9,7 +9,9 @@ In addition to this, *LibPacIO* is also beginner-friendly. It features a couple 
 ## Systems Supported
 
 ![Linux Support](https://img.shields.io/badge/Linux-Supported-brightgreen?style=for-the-badge&logo=linux&logoColor=white)
+
 ![MacOS Support](https://img.shields.io/badge/MacOS-Supported-brightgreen?style=for-the-badge&logo=apple&logoColor=white)
+
 ![Windows Support](https://img.shields.io/badge/Windows-Not_Supported-darkred?style=for-the-badge&logo=windows11&logoColor=white)
 
 ## Copyright Disclaimer
