@@ -1,3 +1,17 @@
+2025-07-02 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacIO Version 3.0.1
+	* Updated README.md.
+		* Added spacing between the System Support badges.
+		* Updated the file path to the logo.
+	* Updated docs.
+		* Removed the libpacio folder, as it is unnecessary.
+		* All contents from the libpacio folder were moved to the images directory.
+	* Updated print.c.
+		* Flags for both PacROM and PacROMSet are now function-based.
+		* The ifstatements were altered to make up for the new changes.
+		* This was done to combat the logical AND warning for Clang users.
+
 2025-06-30 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacIO Version 3.0.0

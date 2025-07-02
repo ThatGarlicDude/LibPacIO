@@ -1,4 +1,4 @@
-# ![LibPacIO](./docs/images/libpacio/logo/logo_4x.png)
+# ![LibPacIO](./docs/images/logo/logo_4x.png)
 
 ## Overview
 

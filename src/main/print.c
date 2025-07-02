@@ -8,18 +8,18 @@
 #include <libpacio/print.h>
 
 /* PACROM FLAGS */
-#define FLAG_ROM_PRINT_STRUCT_ADDRESS 0x01
-#define FLAG_ROM_PRINT_PATH 0x02
-#define FLAG_ROM_PRINT_SIZE 0x04
-#define FLAG_ROM_PRINT_DATA 0x08
-#define FLAG_ROM_PRINT_DATA_ALL 0x10
+#define FLAG_ROM_PRINT_STRUCT_ADDRESS(flags) ((flags) & 0x01)
+#define FLAG_ROM_PRINT_PATH(flags) ((flags) & 0x02)
+#define FLAG_ROM_PRINT_SIZE(flags) ((flags) & 0x04)
+#define FLAG_ROM_PRINT_DATA(flags) ((flags) & 0x08)
+#define FLAG_ROM_PRINT_DATA_ALL(flags) ((flags) & 0x10)
 
 /* PACROMSET FLAGS */
-#define FLAG_ROMSET_PRINT_STRUCT_ADDRESS 0x01
-#define FLAG_ROMSET_PRINT_PATH 0x02
-#define FLAG_ROMSET_PRINT_SIZE 0x04
-#define FLAG_ROMSET_PRINT_ROMS 0x08
-#define FLAG_ROMSET_PRINT_ROMS_ALL 0x10
+#define FLAG_ROMSET_PRINT_STRUCT_ADDRESS(flags) ((flags) & 0x01)
+#define FLAG_ROMSET_PRINT_PATH(flags)((flags) & 0x02)
+#define FLAG_ROMSET_PRINT_SIZE(flags) ((flags) & 0x04)
+#define FLAG_ROMSET_PRINT_ROMS(flags) ((flags) & 0x08)
+#define FLAG_ROMSET_PRINT_ROMS_ALL(flags) ((flags) & 0x10)
 
 /* TEXT COLORS */
 #define COLOR_TITLE "\033[1;93m"
@@ -36,11 +36,11 @@
 void pac_rom_print(const pac_rom_t* rom, const uint8_t flags) {
 	if (!rom) return;
 	pac_print_title("ROM");
-	if (flags && FLAG_ROM_PRINT_STRUCT_ADDRESS) pac_rom_print_address(rom);
-	if (flags && FLAG_ROM_PRINT_PATH) pac_rom_print_path(rom);
-	if (flags && FLAG_ROM_PRINT_SIZE) pac_rom_print_size(rom);
-	if (flags && FLAG_ROM_PRINT_DATA) pac_rom_print_data(rom);
-	if (flags && FLAG_ROM_PRINT_DATA_ALL) pac_rom_print_data_all(rom);
+	if (FLAG_ROM_PRINT_STRUCT_ADDRESS(flags)) pac_rom_print_address(rom);
+	if (FLAG_ROM_PRINT_PATH(flags)) pac_rom_print_path(rom);
+	if (FLAG_ROM_PRINT_SIZE(flags)) pac_rom_print_size(rom);
+	if (FLAG_ROM_PRINT_DATA(flags)) pac_rom_print_data(rom);
+	if (FLAG_ROM_PRINT_DATA_ALL(flags)) pac_rom_print_data_all(rom);
 	return;
 }
 
@@ -48,11 +48,11 @@ void pac_rom_print(const pac_rom_t* rom, const uint8_t flags) {
 void pac_romset_print(const pac_romset_t* romset, const uint8_t flags) {
 	if (!romset) return;
 	pac_print_title("ROM Set");
-	if (flags && FLAG_ROMSET_PRINT_STRUCT_ADDRESS) pac_romset_print_address(romset);
-	if (flags && FLAG_ROMSET_PRINT_PATH) pac_romset_print_path(romset);
-	if (flags && FLAG_ROMSET_PRINT_SIZE) pac_romset_print_size(romset);
-	if (flags && FLAG_ROMSET_PRINT_ROMS) pac_romset_print_roms(romset);
-	if (flags && FLAG_ROMSET_PRINT_ROMS_ALL) pac_romset_print_roms_all(romset);
+	if (FLAG_ROMSET_PRINT_STRUCT_ADDRESS(flags)) pac_romset_print_address(romset);
+	if (FLAG_ROMSET_PRINT_PATH(flags)) pac_romset_print_path(romset);
+	if (FLAG_ROMSET_PRINT_SIZE(flags)) pac_romset_print_size(romset);
+	if (FLAG_ROMSET_PRINT_ROMS(flags)) pac_romset_print_roms(romset);
+	if (FLAG_ROMSET_PRINT_ROMS_ALL(flags)) pac_romset_print_roms_all(romset);
 	return;
 }
 
