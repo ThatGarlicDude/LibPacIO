@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-#include "main/pacrom.h"
-#include "main/pacromset.h"
-#include "main/print.h"
+#include <libpacio/pacrom.h>
+#include <libpacio/pacromset.h>
+#include <libpacio/print.h>
 
 /* PACROM FLAGS */
 #define FLAG_ROM_PRINT_STRUCT_ADDRESS(flags) ((flags) & 0x01)

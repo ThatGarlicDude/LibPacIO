@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(pacio VERSION 3.1.0 LANGUAGES C)
+project(pacio VERSION 3.1.1 LANGUAGES C)
 project(pacio_test LANGUAGES C)
 
 # Set up specifications for the C compiler.
@@ -19,7 +19,7 @@ FILE(GLOB TEST_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/test/*.c)
 add_library(pacio SHARED ${MAIN_FILES})
 target_include_directories(pacio PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 install(
-	DIRECTORY include/main
+	DIRECTORY include/libpacio
 	DESTINATION /usr/local/include/libpacio
 	FILES_MATCHING PATTERN "*.h"
 	PATTERN ".git" EXCLUDE

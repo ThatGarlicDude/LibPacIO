@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-#include "main/pacrom.h"
-#include "main/pacromset.h"
-#include "main/print.h"
+#include <libpacio/pacrom.h>
+#include <libpacio/pacromset.h>
+#include <libpacio/print.h>
 
 /*
 	## MEMORY FUNCTIONS ##
