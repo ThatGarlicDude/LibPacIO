@@ -1,3 +1,15 @@
+2025-07-18 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacIO Version 3.2.0
+	* Updated the include directory.
+		* LibPacIO now features a master header (libpacio/pacio.h) that includes all the other headers in the library.
+		* LibPacIO also introduces an shortcut header (libpacio.h) to the master header.
+	* Updated CMakeLists.txt.
+		* Installing the library now takes the entire include folder to the system's local include folder.
+		* The installation process now ignores .swp files.
+		* The test directory will be ignored upon installing the library.
+		* Installing the test executable now focuses on include/test instead of include.
+
 2025-07-16 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacIO Version 3.1.1
