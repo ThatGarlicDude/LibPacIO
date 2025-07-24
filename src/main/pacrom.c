@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <dirent.h>
-#include <libpacio/pacrom.h>
-#include <libpacio/pacromset.h>
-#include <libpacio/print.h>
+#include <libpacio.h>
 
 /*
 	## MEMORY FUNCTIONS ##

@@ -1,12 +1,11 @@
 #ifndef LIBPACIO_PACROM_H
 	#define LIBPACIO_PACROM_H
 
+	#include <libpacio.h>
+
 	#ifdef __cplusplus
 		extern "C" {
 	#endif
-
-	#include <stdio.h>
-	#include <stdint.h>
 
 	// Represents an 8-bit ROM within the Pac-Man and Ms. Pac-Man ROM sets.
 	typedef struct pac_rom {

@@ -1,12 +1,11 @@
 #ifndef LIBPACIO_PACROMSET_H
 	#define LIBPACIO_PACROMSET_H
 
+	#include <libpacio.h>
+
 	#ifdef __cplusplus
 		extern "C" {
 	#endif
-
-	#include <stdio.h>
-	#include <libpacio/pacrom.h>
 
 	// Represents the ROM set for the Pac-Man and Ms. Pac-Man PCBs.
 	typedef struct pac_romset {

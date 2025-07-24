@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(pacio VERSION 3.2.0 LANGUAGES C)
+project(pacio VERSION 3.2.1 LANGUAGES C)
 project(pacio_test LANGUAGES C)
 
 # Set up specifications for the C compiler.

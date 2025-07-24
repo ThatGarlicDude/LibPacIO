@@ -1,14 +1,11 @@
 #ifndef LIBPACIO_PRINT_H
 	#define LIBPACIO_PRINT_H
 
+	#include <libpacio.h>
+
 	#ifdef __cplusplus
 		extern "C" {
 	#endif
-
-	#include <stdio.h>
-	#include <stdint.h>
-	#include <libpacio/pacrom.h>
-	#include <libpacio/pacromset.h>
 
 	/*
 		## GENERAL FUNCTIONS ##

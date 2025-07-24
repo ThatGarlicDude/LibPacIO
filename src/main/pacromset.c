@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <dirent.h>
-#include <libpacio/pacrom.h>
-#include <libpacio/pacromset.h>
-#include <libpacio/print.h>
+#include <libpacio.h>
 
 /*
 	## MEMORY FUNCTIONS ##
@@ -30,7 +23,7 @@ pac_romset_t* pac_romset_create(const char* path) {
 // Clears a PacROMSet with zeroes.
 void pac_romset_clear(pac_romset_t* romset) {
 	if (!romset) return;
-	// Clean the path of the PacDir.
+	// Clean the path of the PacROMSet.
 	if (romset->path) {
 		memset(romset->path, 0, strlen(romset->path));
 		free(romset->path);
