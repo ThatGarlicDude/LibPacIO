@@ -1,6 +1,12 @@
 #ifndef LIBPACIO_PACROMSET_H
 	#define LIBPACIO_PACROMSET_H
 
+	/*
+		TODO:
+		Probably get rid of PacROMSet altogether at some point. We won't be needing this some time soon.
+		It's probably a better practice to just have a global variable being LibPacIO's working directory.
+	*/
+
 	#include <libpacio.h>
 
 	#ifdef __cplusplus
@@ -98,9 +104,6 @@
 
 	// Appends a ROM name into a PacROMSet's stack.
 	void pac_romset_append_rom(pac_romset_t* romset, const char* rom_name);
-
-	// Concats a PacROMSet's path and a ROM's name together.
-	char* pac_romset_concat(const pac_romset_t* romset, size_t index);
 
 	#ifdef __cplusplus
 		}

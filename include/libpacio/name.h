@@ -1,6 +1,8 @@
 #ifndef LIBPACIO_NAME_H
 	#define LIBPACIO_NAME_H
 
+	#include <libpacio.h>
+
 	#ifdef __cplusplus
 		extern "C" {
 	#endif

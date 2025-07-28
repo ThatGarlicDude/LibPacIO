@@ -1,3 +1,15 @@
+2025-07-28 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacIOVersion 3.4.0
+	* Added read.c and .h.
+		* The read functions from pacrom.c and .h were moved here.
+	* Added write.c and .h.
+		* Same with the write functions.
+	* Added save.c and .h.
+	* Added load.c and .h.
+	* Added pathconcat.c and .h.
+		* The concat function from pacromset.c and .h was moved here.
+
 2025-07-27 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacIO Version 3.3.0

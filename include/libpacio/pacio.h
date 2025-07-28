@@ -16,6 +16,14 @@
 	#include <libpacio/pacrom.h>
 	#include <libpacio/pacromset.h>
 
+	// Include the IO headers.
+	#include <libpacio/read.h>
+	#include <libpacio/write.h>
+	#include <libpacio/save.h>
+	#include <libpacio/load.h>
+
+	#include <libpacio/pathconcat.h>
+
 	// Include the print headers.
 	#include <libpacio/print_libpacio.h>
 	#include <libpacio/print.h>
