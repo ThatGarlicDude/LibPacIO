@@ -1,0 +1,17 @@
+#ifndef LIBPACIO_VERSION_H
+	#define LIBPACIO_VERSION_H
+
+	#ifdef __cplusplus
+		extern "C" {
+	#endif
+
+	#define LIBPACIO_VERSION "@PROJECT_VERSION@"
+	#define LIBPACIO_VERSION_MAJOR @PROJECT_VERSION_MAJOR@
+	#define LIBPACIO_VERSION_MINOR @PROJECT_VERSION_MINOR@
+	#define LIBPACIO_VERSION_PATCH @PROJECT_VERSION_PATCH@
+
+	#ifdef __cplusplus
+		}
+	#endif
+
+#endif

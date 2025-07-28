@@ -11,8 +11,13 @@
 	// Include all the headers in the library.
 	#include <libpacio.h>
 	#include <libpacio/pacio.h>
+	#include <libpacio/name.h>
+	#include <libpacio/version.h>
 	#include <libpacio/pacrom.h>
 	#include <libpacio/pacromset.h>
+
+	// Include the print headers.
+	#include <libpacio/print_libpacio.h>
 	#include <libpacio/print.h>
 
 #endif

@@ -1,17 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <libpacio.h>
 #include "pacio_test.h"
+#include "version_print.h"
 
 #define DEFAULT_PATH "."
 #define DEFAULT_TEST "romset_test" // UNUSED Refers to which test you want to run.
 
-#define FLAG_PATH "-p" // UNUSED.
+#define FLAG_PATH "-p"
 #define FLAG_HELP "-help" // UNUSED.
+#define FLAG_VERSION "-v"
 
-char* path = DEFAULT_PATH; // UNUSED.
+char* path = DEFAULT_PATH;
+uint8_t version_mode = 0;
 
 // Test the ROM creation process.
 int rom_test(char* path) {
@@ -60,10 +59,16 @@ int all_test(char* path) {
 
 // Main function.
 int main(int argc, char* argv[]) {
-	if (!argv[1]) {
-		printf("You need to specify the path to continue (type 'pacio_test .' to run the test).\n");
-		return -1;
+	// Go through the flags.
+	for (size_t index = 1; index < argc; index++) {
+		if (strcmp(argv[index], FLAG_PATH) == 0) path = argv[index];
+		if (strcmp(argv[index], FLAG_VERSION) == 0) version_mode = 1;
 	}
-	all_test(argv[1]);
+	// Print the version
+	if (version_mode) {
+		version_test();
+		return 0;
+	}
+	all_test(path);
 	return 0;
 }

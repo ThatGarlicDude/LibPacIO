@@ -1,3 +1,20 @@
+2025-07-27 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacIO Version 3.3.0
+	* Added name.h.
+		* This file only contains a few macros relating to the project's name.
+	* Added version.h.
+		* A configurable file for CMake to customize the macros related to the project's version.
+	* Added print_libpacio.c and .h.
+		* Contains functions for printing information about LibPacIO.
+	* Added verion_print.c and .h.
+		* Used for testing print_libpacio.
+	* Updated pacio_test.c.
+		* Added a flag handler to manage the test's flags.
+	* Updated CMakeLists.txt.
+		* Because of the addition of version.h, which is a configurable file for CMake, pacio_test is moved down so the configuration is focused on pacio.
+		* CMakeLists.txt is split to focus on pacio first, then pacio_test second.
+
 2025-07-23 GarlicDude <https://www.github.com/ThatGarlicDude>
 
 	LibPacIO Version 3.2.1

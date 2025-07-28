@@ -1,6 +1,8 @@
 #ifndef LIBPACIO_PACIO_TEST_H
 	#define LIBPACIO_PACIO_TEST_H
 
+	#include "version_print.h"
+
 	#ifdef __cplusplus
 		extern "C" {
 	#endif
