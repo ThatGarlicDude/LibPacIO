@@ -2,7 +2,7 @@
 #	-- SHARED LIBRARY --
 #
 cmake_minimum_required(VERSION 3.18)
-project(pacio VERSION 3.4.0 LANGUAGES C)
+project(pacio VERSION 3.5.0 LANGUAGES C)
 
 # Set up specifications for the C compiler.
 set(CMAKE_C_STANDARD 99)

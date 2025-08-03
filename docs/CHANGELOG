@@ -1,6 +1,22 @@
+2025-08-03 GarlicDude <https://www.github.com/ThatGarlicDude>
+
+	LibPacIO Version 3.5.0
+	* Updated pacio_test.c and .h.
+		* Renamed the files to main.c and .h for clarity purposes.
+		* main.c and .h will serve as a hub for other tests and programs.
+		* Removed the test programs (they'll be readded in a later update).
+	* Added flag_handler.c and .h.
+		* These files take control of pacio_test's arguments when executed.
+	* Added path_handler.c and .h.
+		* These files include setter and getter functions for pacio_test's file path.
+	* Added help.c and .h.
+		* These files print the help menu for pacio_test.
+	* Updated print_libpacio.c and .h.
+		* Made the disclaimer a bit clearer.
+
 2025-07-28 GarlicDude <https://www.github.com/ThatGarlicDude>
 
-	LibPacIOVersion 3.4.0
+	LibPacIO Version 3.4.0
 	* Added read.c and .h.
 		* The read functions from pacrom.c and .h were moved here.
 	* Added write.c and .h.

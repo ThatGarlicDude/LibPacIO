@@ -1,7 +1,7 @@
 #include <libpacio.h>
 
 // Prints all information about LibPacIO.
-void libpacio_print() {
+void libpacio_print(void) {
 	libpacio_print_name();
 	libpacio_print_version();
 	libpacio_print_disclaimer();
@@ -9,20 +9,20 @@ void libpacio_print() {
 }
 
 // Prints the name of the project.
-void libpacio_print_name() {
+void libpacio_print_name(void) {
 	printf("%s\n", LIBPACIO_NAME);
 	return;
 }
 
 // Prints the version of the project.
-void libpacio_print_version() {
+void libpacio_print_version(void) {
 	printf("Version: %s\n", LIBPACIO_VERSION);
 	return;
 }
 
 // Prints the disclaimer of the project.
 void libpacio_print_disclaimer() {
-	printf("This utility is not an official product of Bandai Namco or AtGames.\n");
-	printf("It is made and developed by GarlicDude for educational and research purposes.\n");
+	printf("This ROM-hacking utility is not an official product of Bandai Namco or AtGames.\n");
+	printf("It is developed by GarlicDude for educational and research purposes.\n");
 	return;
 }
